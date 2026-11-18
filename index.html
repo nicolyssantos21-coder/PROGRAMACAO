@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Master - MVVM</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f2f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 65px 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 620px;
+            padding: 45px 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 26px;
+            color: #222;
+            margin-bottom: 22px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2864e8;
+        }
+
+        button {
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #addBtn {
+            background-color: #2864e8;
+            color: white;
+            padding: 13px;
+            font-size: 14px;
+        }
+
+        #addBtn:hover {
+            background-color: #174fc5;
+        }
+
+        #taskList {
+            list-style: none;
+            margin-top: 35px;
+        }
+
+        #taskList li {
+            padding: 15px 12px;
+            border-bottom: 1px solid #eee;
+            color: #222;
+            font-size: 16px;
+        }
+
+        .task-title {
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .task-info {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .task-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-complete {
+            background: none;
+            color: #28b96b;
+            font-size: 23px;
+            padding: 0;
+        }
+
+        .btn-delete {
+            background: none;
+            color: #ff4165;
+            font-size: 23px;
+            padding: 0;
+        }
+
+        .done .task-title {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .empty-message {
+            color: #888;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 25px 12px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app" class="container">
+
+        <h1>Task Master (MVVM)</h1>
+
+        <div class="form-group">
+
+            <input
+                type="text"
+                id="taskTitle"
+                placeholder="O que precisa ser feito?"
+            >
+
+            <input
+                type="date"
+                id="taskDate"
+            >
+
+            <button id="addBtn">Adicionar</button>
+
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script src="js/TaskViewModel.js"></script>
+
+</body>
+</html>
